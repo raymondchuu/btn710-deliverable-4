@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign in</title>
+    </head>
+    <body>
+        <div>
+            {{#if errorMsg}}
+                <h3>{{errorMsg}}</h3>
+            {{else}}
+                <h3>Enter password to view deliverables</h3>
+            {{/if}}
+            <form method="post" action="/signin">
+                <label for="password">Password: </label>
+                <input type="password" name="password" />
+                <br/><br/>
+                <input type="submit" value="Sign In" />
+            </form>
+        </div>
+    </body>
+</html>
