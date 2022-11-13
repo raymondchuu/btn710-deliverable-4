@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Sign in</title>
+        <link rel="stylesheet" href="/css/signin.css">
     </head>
     <body>
         <div>
@@ -10,12 +11,14 @@
             {{else}}
                 <h3>Enter password to view deliverables</h3>
             {{/if}}
-            <form method="post" action="/signin">
-                <label for="password">Password: </label>
-                <input type="password" name="password" />
-                <br/><br/>
-                <input type="submit" value="Sign In" />
-            </form>
+            <body>
+                <form id="submission_form" method="post" action="/signin">
+                    <label id="password" for="password" placeholder="Enter password here."> Password: </label>
+                    <input type="password" name="password" />
+                    <br/><br/>
+                    <input id="button" type="submit" value="Sign In!" />
+                </form>
+            </body>
         </div>
     </body>
 </html>

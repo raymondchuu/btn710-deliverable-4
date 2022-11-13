@@ -1,0 +1,22 @@
+body {
+    background-color: rgba(0, 255, 191, 0.6);
+}
+
+p{
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#deliverable {
+    margin: auto;
+    margin-top: 2%;
+    width: 50%;
+}
+
+#deliverable2 {
+    margin: auto;
+    margin-top: 2%;
+    width: 43%;
+}
