@@ -3,6 +3,8 @@ const app = express();
 const clientSessions = require('client-sessions');
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
+const bcrypt = require('bcrypt');
+
 const HTTP_PORT = process.env.port || 8080;
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -40,13 +42,17 @@ app.get('/signin', (req, res) => {
 
 app.post('/signin', (req, res) => {
     const password = req.body.password;
+    const saltRounds = 10;
 
     if (password === 'btn710@G#') {
-        req.userSession.data = {
-            // username: 'user1',
-            password,
-        }
-        res.redirect('/deliverables');
+        bcrypt.genSalt(saltRounds, (err, salt) => {
+            bcrypt.hash(password, salt, (err, hash) => {
+                req.userSession.data = {
+                    password: hash,
+                }
+                res.redirect('/deliverables');
+            })
+        })
     } else {
         res.render('signin', {
             errorMsg: "Invalid Password",

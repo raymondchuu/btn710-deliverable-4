@@ -1,0 +1,8 @@
+# Don't include .env, which might have sensitive information
+.env
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+coverage
